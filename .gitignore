@@ -1,90 +1,17 @@
 ```
-# Dependencies
-node_modules/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-.ENV
-.venv.bak/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.git/
-.mypy_cache/
-.pytest_cache/
-.hypothesis/
+# Compiled Java classes
+*.class
 
 # Build artifacts
-dist/
 build/
-*.egg-info/
-.eggs/
-.installed.cfg
-lib/
-lib64/
-parts/
-sdist/
-develop-eggs/
-downloads/
-eggs/
-.eggs/
-. installed.cfg
-lib/
-lib64/
-parts/
-sdist/
-develop-eggs/
-var/
-bin/
-include/
-share/
+dist/
 
-# Environment
-.env
-.env.local
-.env.*
-!.env.example
-!.env.sample
-!.env.template
+# Gradle
+.gradle/
 
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
+# JAR files
+*.jar
 
-# Logs
-*.log
-*.out
-*.pid
-*.seed
-*.id
-*.lock
-*.sqlite
-*.sqlite-shm
-*.sqlite-wal
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Temporary files
+*.tmp
 ```

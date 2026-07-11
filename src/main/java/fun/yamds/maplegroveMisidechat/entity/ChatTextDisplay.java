@@ -147,6 +147,7 @@ public class ChatTextDisplay {
         itemStack.setAmount(1);
         Item item = this.textDisplay.getWorld().dropItemNaturally(this.textDisplay.getLocation(), itemStack);
         item.setPickupDelay(32767);
+        item.setGlowing(false);
 
         item.setMetadata("ChatTextDisplay", new FixedMetadataValue(instance, "ChatTextDisplay"));
         item.addPassenger(this.textDisplay);    // 骑乘
