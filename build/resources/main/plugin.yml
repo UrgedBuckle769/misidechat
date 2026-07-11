@@ -1,0 +1,8 @@
+name: maplegrove-misidechat
+version: '1.1'
+main: fun.yamds.maplegroveMisidechat.MaplegroveMisidechat
+api-version: '1.21'
+authors: [ Yamds ]
+description: '仿照米塔文本掉落的聊天插件'
+
+depend: []
