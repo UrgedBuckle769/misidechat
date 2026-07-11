@@ -69,10 +69,21 @@ public class ChatTextDisplay {
         Vector tarVec = playerLoc.toVector().add(direction.multiply(distance));
         Location tarLoc = tarVec.toLocation(Objects.requireNonNull(playerLoc.getWorld()));
 
-        double rad = Math.toRadians(playerLoc.getYaw() + 180);
-        float rightX = (float) Math.cos(rad);
-        float rightZ = (float) Math.sin(rad);
-        return new Location(tarLoc.getWorld(), tarLoc.getX() + rightX * offsetX, tarLoc.getY(), tarLoc.getZ() + rightZ * offsetX, playerLoc.getYaw() + 180, 0);
+        // 使用玩家朝向的 yaw 来计算左右偏移
+        double rad = Math.toRadians(playerLoc.getYaw());
+        float rightX = (float) -Math.sin(rad);  // 右侧向量的 X 分量
+        float rightZ = (float) Math.cos(rad);   // 右侧向量的 Z 分量
+        
+        Location newLoc = new Location(tarLoc.getWorld(), 
+                tarLoc.getX() + rightX * offsetX, 
+                tarLoc.getY(), 
+                tarLoc.getZ() + rightZ * offsetX);
+        
+        // 设置文本显示的朝向，使其始终面向玩家（使用 setDirection 直接传入反向方向向量）
+        Vector toPlayer = playerLoc.toVector().subtract(newLoc.toVector()).normalize();
+        newLoc.setDirection(toPlayer);
+        
+        return newLoc;
     }
 
     /**
