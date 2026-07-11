@@ -26,12 +26,6 @@ public class chatListener implements Listener {
      */
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
-        // 取消原生事件，防止其他插件篡改聊天内容
-        event.setCancelled(true);
-        
-        TextComponent result = new TextComponent();
-        String chatheadStyle = config.getString("chathead-style");
-
         String message = event.getMessage();
         Player player = event.getPlayer();
 
